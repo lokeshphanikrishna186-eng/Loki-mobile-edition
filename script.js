@@ -17,11 +17,11 @@ async function handleTools(text){
   }
 
   const m=t.match(/(\d+)\s*(seconds?|secs?|minutes?|mins?|hours?|hrs?)/i);
-  if((t.includes('timer'))||t.includes('టైమర్'))&&m){
+  if((t.includes('timer')||t.includes('టైమర్'))&&m){
     const amount=parseInt(m[1]); const unit=m[2].toLowerCase();
-    const factor=/^(hours?|hrs?|h)/.test(unit)?3600000:/^(seconds?|secs?)/.test(unit)?1000:60000;
+    const factor=/^(hours?|hrs?|h)/.test(unit)?3600000:/^(seconds?|secs?|s)/.test(unit)?1000:60000;
     const duration=amount*factor;
-    setTimeout(()=>speak(`టైమర్ పూర్తింది! ${amount} ${unit} అయ్యాయి.`),duration);
+    setTimeout(()=>speak(`టైమర్ పూర్తయింది! ${amount} ${unit} అయ్యాయి.`),duration);
     return `Timer set for ${amount} ${unit}.`;
   }
 
