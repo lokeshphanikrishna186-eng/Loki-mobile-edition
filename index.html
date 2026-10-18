@@ -1,6 +1,6 @@
 let API_KEY = localStorage.getItem('loki_key'); 
 if(!API_KEY) { 
-    API_KEY = prompt('Enter Your Gemini API Key:'); 
+API_KEY = prompt('Enter Your Gemini API Key:'); 
     if(API_KEY) localStorage.setItem('loki_key', API_KEY); 
 } 
 const MODELS = ["gemini-3.8-flash", "gemini-3.1-flash-lite", "gemini-flash-latest"]; 
